@@ -30,7 +30,7 @@ internal object MenuParser {
 
             AnimatedBottomBar.Tab(
                 title = item.title.toString(),
-                icon = item.icon,
+                icon = requireNotNull(item.icon) { "Menu item attribute 'icon' for tab named '${item.title}' is missing" },
                 id = item.itemId,
                 enabled = item.isEnabled
             )
